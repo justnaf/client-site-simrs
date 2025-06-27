@@ -1,12 +1,11 @@
 <?php
 
-namespace App\View\Components\Layout;
+namespace App\View\Components;
 
-use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
-class AuthLayout extends Component
+class AdminLayout extends Component
 {
     /**
      * Create a new component instance.
@@ -19,8 +18,8 @@ class AuthLayout extends Component
     /**
      * Get the view / contents that represent the component.
      */
-    public function render(): View|Closure|string
+    public function render(): View
     {
-        return view('components.layout.auth-layout');
+        return view('layouts.admin-layout');
     }
 }
