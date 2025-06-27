@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{$title ." | ". config('app.name', 'Laravel') ?? config('app.name', 'Laravel') }}</title>
 
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
@@ -13,7 +13,7 @@
         @include('layouts.navigation')
 
         <!-- Main Content -->
-        <main class="flex-1 p-10">
+        <main class="flex-1 p-10 overflow-y-scroll">
             {{$slot}}
         </main>
     </div>

@@ -1,4 +1,7 @@
 <x-admin-layout>
+    <x-slot name="title">
+        Dashboard
+    </x-slot>
     <h1 class="text-3xl font-bold text-sky-800 mb-8">Selamat Datang, Kasir</h1>
     <!-- Rekap Card -->
     <h2 class="text-lg font-bold text-gray-700 mb-2">Aktivitas Hari Ini</h2>

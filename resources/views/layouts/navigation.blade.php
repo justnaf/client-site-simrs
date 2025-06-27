@@ -6,8 +6,20 @@
             <i data-lucide="layout-dashboard"></i>
             <span>Dashboard</span>
         </a>
-        <a href="{{ route('welcome') }}" @class([ 'flex items-center space-x-2 py-2 px-4 rounded-lg text-white transition-colors' , 'bg-sky-700'=> request()->routeIs('register.*'),
-            'hover:bg-sky-700' => !request()->routeIs('welcome')
+        <a href="{{ route('admin.payment.type.index') }}" @class([ 'flex items-center space-x-2 py-2 px-4 rounded-lg text-white transition-colors' , 'bg-sky-700'=> request()->routeIs('admin.payment.type.*'),
+            'hover:bg-sky-700' => !request()->routeIs('admin.payment.type.*')
+            ])>
+            <i data-lucide="wallet"></i>
+            <span>Jenis Payment</span>
+        </a>
+        <a href="{{ route('admin.patients.index') }}" @class([ 'flex items-center space-x-2 py-2 px-4 rounded-lg text-white transition-colors' , 'bg-sky-700'=> request()->routeIs('admin.patients.*'),
+            'hover:bg-sky-700' => !request()->routeIs('admin.patients.*')
+            ])>
+            <i data-lucide="briefcase-medical"></i>
+            <span>Pasien</span>
+        </a>
+        <a href="{{ route('admin.registration.index') }}" @class([ 'flex items-center space-x-2 py-2 px-4 rounded-lg text-white transition-colors' , 'bg-sky-700'=> request()->routeIs('admin.registration.*'),
+            'hover:bg-sky-700' => !request()->routeIs('admin.registration.*')
             ])>
             <i data-lucide="notepad-text-dashed"></i>
             <span>Pendaftaran</span>
