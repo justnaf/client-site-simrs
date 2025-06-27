@@ -13,6 +13,7 @@
         "blade-ui-kit/blade-icons": "^1.8",
         "laravel/framework": "^12.0",
         "laravel/tinker": "^2.10.1",
+        "prezet/prezet": "^1.2",
         "spatie/laravel-permission": "^6.20"
     },
     "require-dev": {

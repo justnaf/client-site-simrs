@@ -12,7 +12,6 @@ use Illuminate\View\View;
 use Illuminate\Support\Str;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Pagination\LengthAwarePaginator;
-use Illuminate\Support\Carbon;
 
 class RegistrationController extends Controller
 {
@@ -21,7 +20,6 @@ class RegistrationController extends Controller
     public function index(Request $request): View
     {
         try {
-            // --- PENGAMBILAN DATA ---
             $responseUtama = Http::timeout(15)->get($this->apiBaseUrl . '/pendaftaran');
             $responsePoli = Http::timeout(15)->get($this->apiBaseUrl . '/poli');
 
