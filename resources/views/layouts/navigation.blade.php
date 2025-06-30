@@ -24,7 +24,9 @@
             <i data-lucide="notepad-text-dashed"></i>
             <span>Pendaftaran</span>
         </a>
-        <a href="{{ url('/transaksi') }}" class="flex items-center space-x-2 py-2 px-4 text-white  hover:bg-sky-700 rounded-lg">
+        <a href="{{ route('admin.billing.search') }}" @class([ 'flex items-center space-x-2 py-2 px-4 rounded-lg text-white transition-colors' , 'bg-sky-700'=> request()->routeIs('admin.billing.*'),
+            'hover:bg-sky-700' => !request()->routeIs('admin.billing.*')
+            ])>
             <i data-lucide="receipt-text"></i>
             <span>Transaksi</span>
         </a>
@@ -34,11 +36,21 @@
             <i data-lucide="pill"></i>
             <span>Data Obat</span>
         </a>
-        <a href="{{ url('/dlayanann') }}" class="flex items-center space-x-2 py-2 px-4 text-white hover:bg-sky-700 rounded-lg">
-            <i data-lucide="user-round"></i>
-            <span>Daftar Layanan</span>
+        <a href="{{ route('admin.polis.index')  }}" @class([ 'flex items-center space-x-2 py-2 px-4 rounded-lg text-white transition-colors' , 'bg-sky-700'=> request()->routeIs('admin.polis.*'),
+            'hover:bg-sky-700' => !request()->routeIs('admin.polis.*')
+            ])>
+            <i data-lucide="square-activity"></i>
+            <span>Data Poli</span>
         </a>
-        <a href="{{ url('/laptransaksi') }}" class="flex items-center space-x-2 py-2 px-4 text-white hover:bg-sky-700 rounded-lg">
+        <a href="{{ route('admin.dokters.index')  }}" @class([ 'flex items-center space-x-2 py-2 px-4 rounded-lg text-white transition-colors' , 'bg-sky-700'=> request()->routeIs('admin.dokters.*'),
+            'hover:bg-sky-700' => !request()->routeIs('admin.dokters.*')
+            ])>
+            <i data-lucide="user-round"></i>
+            <span>Data Dokter</span>
+        </a>
+        <a href="{{ route('admin.transaction.index')  }}" @class([ 'flex items-center space-x-2 py-2 px-4 rounded-lg text-white transition-colors' , 'bg-sky-700'=> request()->routeIs('admin.transaction.*'),
+            'hover:bg-sky-700' => !request()->routeIs('admin.transaction.*')
+            ])>
             <i data-lucide="hand-coins"></i>
             <span>Laporan Transaksi</span>
         </a>

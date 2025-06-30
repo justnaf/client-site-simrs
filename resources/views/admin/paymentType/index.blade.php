@@ -27,7 +27,10 @@
                         <td class="px-3 py-4">{{ $data->code }}</td>
                         <td class="px-3 py-4">{{ $data->name }}</td>
                         <td class="px-3 py-4 text-center">
-                            <form action="{{route('admin.payment.type.destroy',['payment'=>$data->id])}}" method="POST">
+                            <a href="{{ route('admin.payment.type.edit', $data->id) }}" class="text-sky-500 hover:text-sky-700 font-semibold">
+                                Edit
+                            </a>
+                            <form action="{{route('admin.payment.type.destroy', $data->id)}}" method="POST">
                                 @csrf
                                 @method('DELETE')
                                 <button class="text-red-500 hover:text-red-700" type="submit">Delete</button>

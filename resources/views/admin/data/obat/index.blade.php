@@ -1,6 +1,6 @@
 <x-admin-layout>
     <x-slot name="title">
-        Manajemen Obat
+        Data Obat
     </x-slot>
 
     <div class="flex justify-between items-center mb-6">
@@ -30,7 +30,6 @@
                     <th class="p-3 text-left">Satuan</th>
                     <th class="p-3 text-right">Harga</th>
                     <th class="p-3 text-center">Stok</th>
-                    <th class="p-3 text-center">Aksi</th>
                 </tr>
             </thead>
             <tbody>
@@ -41,16 +40,6 @@
                     <td class="p-3">{{ $obat['bentuk_satuan'] ?? 'N/A' }}</td>
                     <td class="p-3 text-right">Rp {{ number_format($obat['harga_jual'] ?? 0, 0, ',', '.') }}</td>
                     <td class="p-3 text-center">{{ $obat['stok'] ?? 0 }}</td>
-                    <td class="p-3 text-center">
-                        <div class="flex justify-center items-center space-x-2">
-                            <a href="#" class="text-sky-500 hover:text-sky-700 font-semibold">Edit</a>
-                            <form action="#" method="POST" onsubmit="return confirm('Anda yakin?');">
-                                @csrf
-                                @method('DELETE')
-                                <button type="submit" class="text-red-500 hover:text-red-700 font-semibold">Delete</button>
-                            </form>
-                        </div>
-                    </td>
                 </tr>
                 @empty
                 <tr>

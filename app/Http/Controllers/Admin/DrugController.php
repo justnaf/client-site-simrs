@@ -45,7 +45,7 @@ class DrugController extends Controller
                 ['path' => Paginator::resolveCurrentPath()]
             );
 
-            return view('admin.obat.index', [
+            return view('admin.data.obat.index', [
                 'dataObat' => $dataObat,
             ]);
         } catch (\Exception $e) {
@@ -53,7 +53,7 @@ class DrugController extends Controller
 
             $dataObat = new LengthAwarePaginator([], 0, 15);
 
-            return view('admin.obat.index', [
+            return view('admin.data.obat.index', [
                 'dataObat' => $dataObat,
             ])->with('error', 'Gagal mengambil atau memproses data obat dari server.');
         }

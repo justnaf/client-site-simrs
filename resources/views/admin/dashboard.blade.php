@@ -5,33 +5,43 @@
     <h1 class="text-3xl font-bold text-sky-800 mb-8">Selamat Datang, Kasir</h1>
     <!-- Rekap Card -->
     <h2 class="text-lg font-bold text-gray-700 mb-2">Aktivitas Hari Ini</h2>
-    <div class="flex gap-4">
-        <!-- Card 1 -->
-        <div class="flex justify-between items-center bg-white rounded-2xl shadow-md px-4 py-3 w-64">
+    <div class="flex flex-wrap gap-4">
+        <div class="flex justify-between items-center bg-white rounded-2xl shadow-md px-6 py-4 w-full sm:w-64">
             <div>
-                <p class="text-sm text-blue-900 font-medium">Total Pemasukan</p>
-                <p class="text-2xl text-blue-900 font-semibold">RP</p>
+                <p class="text-sm text-gray-500 font-medium">Total Pemasukan</p>
+                {{-- Tampilkan data total pemasukan yang sudah diformat --}}
+                <p class="text-2xl text-sky-800 font-bold mt-1">
+                    Rp {{ number_format($totalRevenue, 0, ',', '.') }}
+                </p>
             </div>
-            <div class="bg-gradient-to-br from-yellow-200 to-blue-400 rounded-xl p-[6px] flex items-center justify-center">
-                <i data-lucide="piggy-bank"></i>
+            <div class="bg-gradient-to-br from-sky-100 to-sky-300 text-sky-700 rounded-xl p-3 flex items-center justify-center">
+                <i data-lucide="piggy-bank" class="w-7 h-7"></i>
             </div>
         </div>
-        <!-- Card 2 -->
-        <div class="flex justify-between items-center bg-white rounded-2xl shadow-md px-4 py-3 w-64">
+
+        <div class="flex justify-between items-center bg-white rounded-2xl shadow-md px-6 py-4 w-full sm:w-64">
             <div>
-                <p class="text-sm text-blue-900 font-medium">Transaksi Hari ini</p>
+                <p class="text-sm text-gray-500 font-medium">Transaksi Hari Ini</p>
+                {{-- Tampilkan data jumlah transaksi hari ini --}}
+                <p class="text-3xl text-sky-800 font-bold mt-1">
+                    {{ $todayTransactionsCount }}
+                </p>
             </div>
-            <div class="bg-gradient-to-br from-yellow-200 to-blue-400 rounded-xl p-[6px] flex items-center justify-center">
-                <i data-lucide="coins"></i>
+            <div class="bg-gradient-to-br from-green-100 to-green-300 text-green-700 rounded-xl p-3 flex items-center justify-center">
+                <i data-lucide="coins" class="w-7 h-7"></i>
             </div>
         </div>
-        <!-- Card 3 -->
-        <div class="flex justify-between items-center bg-white rounded-2xl shadow-md px-4 py-3 w-64">
+
+        <div class="flex justify-between items-center bg-white rounded-2xl shadow-md px-6 py-4 w-full sm:w-64">
             <div>
-                <p class="text-sm text-blue-900 font-medium">Pasien Hari ini</p>
+                <p class="text-sm text-gray-500 font-medium">Pasien Hari Ini</p>
+                {{-- Tampilkan data jumlah pasien hari ini --}}
+                <p class="text-3xl text-sky-800 font-bold mt-1">
+                    {{ $todayPatientsCount }}
+                </p>
             </div>
-            <div class="bg-gradient-to-br from-yellow-200 to-blue-400 rounded-xl p-[6px] flex items-center justify-center">
-                <i data-lucide="users"></i>
+            <div class="bg-gradient-to-br from-yellow-100 to-yellow-300 text-yellow-700 rounded-xl p-3 flex items-center justify-center">
+                <i data-lucide="users" class="w-7 h-7"></i>
             </div>
         </div>
     </div>

@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\PaymentType;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use App\Models\Registration; // 1. Import model Registration Anda
@@ -14,6 +15,15 @@ class RegistrationSeeder extends Seeder
      */
     public function run(): void
     {
+        $payment = PaymentType::updateOrCreate(
+            [
+                'code' => 'UM', // Kunci unik untuk mencari data
+            ],
+            [
+                'name' => 'Umum',
+                'discount' => 0,
+            ]
+        );
         // 3. Daftar no_registrasi dari data sampel Anda sebelumnya
         $registrationNumbers = [
             1,
@@ -57,7 +67,7 @@ class RegistrationSeeder extends Seeder
                 [
                     // Data yang akan dibuat atau di-update
                     'unicode' => 'OFF-' . strtoupper(Str::random(8)), // 'OFF-' ditambah 8 karakter acak kapital
-                    'payment_type_id' => 5 // Nilai statis sesuai permintaan
+                    'payment_type_id' => $payment->id // Nilai statis sesuai permintaan
                 ]
             );
         }

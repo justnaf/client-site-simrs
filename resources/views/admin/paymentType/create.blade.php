@@ -21,9 +21,9 @@
                         <input type="text" id="jenix" name="name" class="border rounded-md px-3 py-1 w-56">
                     </div>
                     <div class="flex items-center">
-                        <label class="w-40 font-medium" for="ico">Icon Pembayaran (Tidak Wajib)</label>
+                        <label class="w-40 font-medium" for="discount">Diskon (Opsional)</label>
                         <span class="mr-2">:</span>
-                        <input type="file" id="icon" name="file_icon" class="border rounded-md px-3 py-1 w-56">
+                        <input type="text" id="discount" name="discount" class="border rounded-md px-3 py-1 w-56">
                     </div>
                     <button type="submit" class="bg-[#76A9C5] hover:bg-[#76A9C5]/50 text-white font-bold py-2 px-4 rounded">
                         Simpan

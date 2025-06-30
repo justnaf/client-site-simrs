@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('code');
             $table->string('name');
-            $table->string('icon_path')->nullable();
+            $table->string('discount')->default('0');
             $table->timestamps();
         });
         Schema::create('registrations', function (Blueprint $table) {

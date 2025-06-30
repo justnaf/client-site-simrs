@@ -8,7 +8,7 @@ use App\Models\Registration;
 
 class PaymentType extends Model
 {
-    protected $fillable = ['code', 'name', 'icon_path'];
+    protected $fillable = ['code', 'name', 'discount'];
 
     /**
      * Mendefinisikan relasi: Satu JenisPendaftaran bisa memiliki banyak Pendaftaran (Registration).
